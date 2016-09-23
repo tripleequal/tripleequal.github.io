@@ -1,51 +1,39 @@
 # Site settings
-title: Bob Hanson - Software Engineer
-description: "I love the web!"
-baseurl: "/space-jekyll-template" # the subpath of your site, e.g. /blog
-url: "http://tripleequal.github.io"
+title: Jekyll-Uno
+description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
+url: 'http://joshgerdes.com/jekyll-uno'
+baseurl: '/jekyll-uno/'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
 
-# User settings
-username: tripleequal
-user_title: Bob Hanson - Owner
-email: bob@tripleequal.net
-twitter_username: tripleequal
-github_username:  tripleequal
-# gplus_username:  loremipsum
-# disqus_username: loremipsum
+author:
+  name: 'Josh Gerdes'
+  email: josh@joshgerdes.com
+  twitter_username: joshgerdes
+  facebook_username: joshgerdes
+  github_username:  joshgerdes
+  linkedin_username:  joshgerdes
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
 
 # Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
 markdown: kramdown
 highlighter: rouge
-permalink: /:title/
 
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
 
-# html minify
-compress_html:
-  clippings: all
-  comments: all
-  endings: []
-  profile: false
-
-# Links to include in menu navigation
-# For external links add external: true
-links:
-  - title: home
-    url: /
-  - title: my posts
-    url: /posts
-  - title: series
-    url: /series
-  - title: tags
-    url: /tags
-  - title: About me
-    url: /about
-# projects in header index
-projects:
-  - name: asciilang
-    url: https://github.com/victorvoid/asciilang
-  - name: vim-frontend
-    url: https://github.com/victorvoid/vim-frontend
-  - name: generator-capybara
-    url: https://github.com/victorvoid/generator-capybara
-# exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
+gems: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
